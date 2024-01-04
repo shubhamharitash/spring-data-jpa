@@ -1,0 +1,110 @@
+# CREATE DATABASE shubham
+/bin/sh: 1: CREATE: not found
+# databases
+/bin/sh: 2: databases: not found
+# psql -h localhost -U postgres
+psql (16.1 (Debian 16.1-1.pgdg120+1))
+Type "help" for help.
+
+postgres=# \c shubham;
+You are now connected to database "shubham" as user "postgres".
+shubham=# \c shubham;
+You are now connected to database "shubham" as user "postgres".
+shubham=# \d
+          List of relations
+ Schema |  Name   | Type  |  Owner
+--------+---------+-------+----------
+ public | student | table | postgres
+(1 row)
+
+shubham=# \d student
+                        Table "public.student"
+   Column   |          Type          | Collation | Nullable | Default
+------------+------------------------+-----------+----------+---------
+ id         | bigint                 |           | not null |
+ age        | integer                |           |          |
+ email      | character varying(255) |           |          |
+ first_name | character varying(255) |           |          |
+ last_name  | character varying(255) |           |          |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+
+shubham=# \d
+                List of relations
+ Schema |       Name       |   Type   |  Owner
+--------+------------------+----------+----------
+ public | student          | table    | postgres
+ public | student_sequence | sequence | postgres
+(2 rows)
+
+shubham=# \d student
+                        Table "public.student"
+   Column   |          Type          | Collation | Nullable | Default
+------------+------------------------+-----------+----------+---------
+ id         | bigint                 |           | not null |
+ age        | integer                |           |          |
+ email      | character varying(255) |           |          |
+ first_name | character varying(255) |           |          |
+ last_name  | character varying(255) |           |          |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+
+shubham=# \d student
+                Table "public.student"
+   Column   |  Type   | Collation | Nullable | Default
+------------+---------+-----------+----------+---------
+ id         | bigint  |           | not null |
+ age        | integer |           |          |
+ email      | text    |           | not null |
+ first_name | text    |           | not null |
+ last_name  | text    |           | not null |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+    "uk_fe0i52si7ybu0wjedj6motiim" UNIQUE CONSTRAINT, btree (email)
+
+shubham=# \d student
+                Table "public.student"
+   Column   |  Type   | Collation | Nullable | Default
+------------+---------+-----------+----------+---------
+ id         | bigint  |           | not null |
+ age        | integer |           | not null |
+ email      | text    |           | not null |
+ first_name | text    |           | not null |
+ last_name  | text    |           | not null |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+    "uk_fe0i52si7ybu0wjedj6motiim" UNIQUE CONSTRAINT, btree (email)
+
+shubham=# \d student
+                Table "public.student"
+   Column   |  Type   | Collation | Nullable | Default
+------------+---------+-----------+----------+---------
+ id         | bigint  |           | not null |
+ age        | integer |           | not null |
+ email      | text    |           | not null |
+ first_name | text    |           | not null |
+ last_name  | text    |           | not null |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+    "student_email_unique" UNIQUE CONSTRAINT, btree (email)
+
+shubham=# \d student
+                Table "public.student"
+   Column   |  Type   | Collation | Nullable | Default
+------------+---------+-----------+----------+---------
+ id         | bigint  |           | not null |
+ age        | integer |           | not null |
+ email      | text    |           | not null |
+ first_name | text    |           | not null |
+ last_name  | text    |           | not null |
+Indexes:
+    "student_pkey" PRIMARY KEY, btree (id)
+    "student_email_unique" UNIQUE CONSTRAINT, btree (email)
+
+shubham=# SELECT * FROM student;
+ id | age |       email       | first_name | last_name
+----+-----+-------------------+------------+-----------
+  1 |  18 | abhinav@gmail.com | abhinav    | bhatt
+(1 row)
+
+shubham=#
